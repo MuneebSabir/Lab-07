@@ -1,0 +1,59 @@
+<html>
+<head>
+<script src="jquery-2.1.4.js"></script>
+<title>
+Dynamic Form!
+</title>
+
+</head>
+
+<body style="background-color:skyblue">
+<script>
+var counter = 0;
+
+function addInput(divName){
+	   	var field=prompt("Enter field name: ");
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = field + " <br><input type='text' name='myInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+     
+}
+function addpass(divName){
+		var field=prompt("Enter field name: ");
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = field  + " <br><input type='password' name='myInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+     
+}
+function addtextarea(divName){
+		var field=prompt("Enter field name: ");
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = field + " <br><input type='textarea' cols='50' rows='10' name='myInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+     
+}
+</script>
+<h2 align="center">Dynamic Form</h2>
+
+<form method="POST">
+<input type="button" value="Add another text input" onClick="addInput('dynamicInput');">
+<input type="button" value="Add a password field" onClick="addpass('dynamicpass');">
+<input type="button" value="Add a textarea field" onClick="addtextarea('dynamicarea');">
+     <div id="dynamicInput" style="position:relative">
+          
+     </div>
+     <div id="dynamicpass"style="position:relative">
+          
+     </div>
+     <div id="dynamicarea"style="position:relative">
+          
+     </div>
+     
+</form>
+<input type="submit" name="Submit" value="Submit">
+</div>
+</body>
+</html>
